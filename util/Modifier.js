@@ -117,6 +117,27 @@ class Modifer {
       blue: b
     })
   }
+
+  cleanEmblemObject (emblem) {
+    return Promise.resolve({
+      icon: emblem.icon,
+      iconColor: emblem.iconColor,
+      border: emblem.border,
+      borderColor: emblem.borderColor,
+      backgroundColor: emblem.backgroundColor
+    })
+  }
+
+  cleanGuildObject (guild) {
+    return Promise.resolve({
+      faction: guild.side,
+      icon: guild.emblem.icon,
+      iconColor: guild.emblem.iconColor,
+      border: guild.emblem.border,
+      borderColor: guild.emblem.borderColor,
+      backgroundColor: guild.emblem.backgroundColor
+    })
+  }
 }
 
 module.exports = Modifer
