@@ -99,8 +99,6 @@ class Modifer {
       const colorKey = key + 'Color'
       if (colors[colorKey] !== undefined) {
         const rgb = await this.hexToRGB(colors[colorKey])
-        console.log(`${colorKey} =`)
-        console.log(rgb)
         images[key] = await this.changeImageColor(images[key], rgb.red, rgb.green, rgb.blue)
       }
     }
@@ -117,6 +115,27 @@ class Modifer {
       red: r,
       green: g,
       blue: b
+    })
+  }
+
+  cleanEmblemObject (emblem) {
+    return Promise.resolve({
+      icon: emblem.icon,
+      iconColor: emblem.iconColor,
+      border: emblem.border,
+      borderColor: emblem.borderColor,
+      backgroundColor: emblem.backgroundColor
+    })
+  }
+
+  cleanGuildObject (guild) {
+    return Promise.resolve({
+      faction: guild.side,
+      icon: guild.emblem.icon,
+      iconColor: guild.emblem.iconColor,
+      border: guild.emblem.border,
+      borderColor: guild.emblem.borderColor,
+      backgroundColor: guild.emblem.backgroundColor
     })
   }
 }

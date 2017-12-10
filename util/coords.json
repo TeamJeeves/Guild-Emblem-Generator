@@ -1,7 +1,22 @@
 {
-  "flagCoords" : { "x": 37, "y": 47 },
-  "bgCoords" : { "x": 17, "y": 17 },
-  "hookCoords" : { "x": 37, "y": 49 },
-  "borderCoords" : { "x": 50, "y": 60 },
-  "iconCoords" : { "x": 55, "y": 75 }
+  "flag": {
+    "x": 37,
+    "y": 47
+  },
+  "background": {
+    "x": 17,
+    "y": 17
+  },
+  "hooks": {
+    "x": 37,
+    "y": 49
+  },
+  "border": {
+    "x": 50,
+    "y": 60
+  },
+  "icon": {
+    "x": 55,
+    "y": 75
+  }
 }
