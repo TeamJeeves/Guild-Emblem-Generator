@@ -34,6 +34,7 @@ module.exports = {
     const canvas = await this.getEmblemCanvas(emblem, factionId)
     return canvas.toBuffer()
   },
+
   /**
    * Generates an emblem image using the data in the given emblem object and
    * faction id. The faction id is required in order to know which background
@@ -87,8 +88,12 @@ module.exports = {
 
     return canvas
   },
+
   /**
    * Generates an emblem image using the data in the given guild object.
+   *
+   * The resulting emblem is returned as a Buffer through a Promise.
+   *
    * @param {object} guild
    * @param {number} guild.lastModified
    * @param {string} guild.name
@@ -103,6 +108,23 @@ module.exports = {
     const cleanObj = await modifier.cleanGuildObject(guild)
     return module.exports.getEmblemBuffer(cleanObj, cleanObj.faction)
   },
+
+  /**
+   * Generates an emblem image using the guild object.
+   *
+   * The resulting emblem is returned as a Canvas through a Promise.
+   * @param {object} guild
+   * @param {number} guild.lastModified
+   * @param {string} guild.name
+   * @param {string} guild.realm
+   * @param {string} guild.battlegroup
+   * @param {number} guild.level
+   * @param {number} guild.side
+   * @param {number} guild.achievementPoints
+   * @param {object} guild.emblem
+   *
+   * @returns {Promise<Canvas>}
+   */
   getEmblemCanvasFromGuild: async function (guild) {
     const cleanObj = await modifier.cleanGuildObject(guild)
     return module.exports.getEmblemCanvas(cleanObj, cleanObj.faction)
