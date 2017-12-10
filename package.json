@@ -1,0 +1,31 @@
+{
+  "name": "didier",
+  "version": "0.0.1",
+  "description": "A tool for building World of Warcraft guild emblems using node-canvas.",
+  "main": "didier.js",
+  "scripts": {
+    "start": "node didier.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alcha/Didier.git"
+  },
+  "keywords": [
+    "wow",
+    "world",
+    "of",
+    "warcraft",
+    "blizzard"
+  ],
+  "author": "Alcha <alcha@paranoiddevs.com> (https://paranoiddevs.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alcha/Didier/issues"
+  },
+  "homepage": "https://github.com/Alcha/Didier#readme",
+  "dependencies": {
+    "canvas": "^1.6.7",
+    "fs-extra": "^4.0.3"
+  }
+}
