@@ -99,8 +99,6 @@ class Modifer {
       const colorKey = key + 'Color'
       if (colors[colorKey] !== undefined) {
         const rgb = await this.hexToRGB(colors[colorKey])
-        console.log(`${colorKey} =`)
-        console.log(rgb)
         images[key] = await this.changeImageColor(images[key], rgb.red, rgb.green, rgb.blue)
       }
     }
