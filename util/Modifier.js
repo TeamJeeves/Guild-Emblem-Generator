@@ -1,6 +1,14 @@
 const Canvas = require('canvas')
 const Image = Canvas.Image
 
+/**
+ * Generates the RGB values for tinting an image. This method was largely
+ * written by Joe of https://playmycode.com.
+ *
+ * @param {*} img
+ *
+ * @see http://www.playmycode.com/blog/2011/06/realtime-image-tinting-on-html5-canvas/
+ */
 function generateRGBKs (img) {
   let w = img.width
   let h = img.height
@@ -44,6 +52,18 @@ function generateRGBKs (img) {
   return Promise.resolve(rgbks)
 }
 
+/**
+ * Generates the tinted image using the provided colors. This method was largely
+ * written by Joe of https://playmycode.com.
+ *
+ * @param {*} img
+ * @param {number[]} rgbks
+ * @param {number} red
+ * @param {number} green
+ * @param {number} blue
+ *
+ * @see http://www.playmycode.com/blog/2011/06/realtime-image-tinting-on-html5-canvas/
+ */
 function generateTintImage (img, rgbks, red, green, blue) {
   const finalImg = new Image()
   const buff = new Canvas()

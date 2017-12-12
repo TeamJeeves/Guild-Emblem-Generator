@@ -74,15 +74,6 @@ class Retriever {
   }
 
   /**
-   * @typedef {Object} Images
-   * @prop {*} icon The buffer containing the icon image
-   * @prop {*} hooks The buffer containing the hooks image
-   * @prop {*} border The buffer containing the border image
-   * @prop {*} flag The Buffer containing the flag image
-   * @prop {*} background The buffer containing the background image
-   */
-
-  /**
    * Retrieves the base images required to build a guild emblem with the given
    * values. Accepts the icon, border, and background/faction id as part of the
    * input parameter. See example for more info.
@@ -126,3 +117,12 @@ class Retriever {
 }
 
 module.exports = Retriever
+
+/**
+ * @typedef {Object} Images
+ * @prop {*} icon The buffer containing the icon image
+ * @prop {*} hooks The buffer containing the hooks image
+ * @prop {*} border The buffer containing the border image
+ * @prop {*} flag The Buffer containing the flag image
+ * @prop {*} background The buffer containing the background image
+ */
