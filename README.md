@@ -1,1 +1,1 @@
-Didier
+Guild-Emblem-Generator

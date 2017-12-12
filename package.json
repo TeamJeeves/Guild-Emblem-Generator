@@ -1,15 +1,15 @@
 {
-  "name": "didier",
+  "name": "guild-emblem-generator",
   "version": "0.0.1",
   "description": "A tool for building World of Warcraft guild emblems using node-canvas.",
-  "main": "didier.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node didier.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Alcha/Didier.git"
+    "url": "git+https://github.com/blizzardbots/Guild-Emblem-Generator.git"
   },
   "keywords": [
     "wow",
@@ -21,9 +21,9 @@
   "author": "Alcha <alcha@paranoiddevs.com> (https://paranoiddevs.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Alcha/Didier/issues"
+    "url": "https://github.com/blizzardbots/Guild-Emblem-Generator/issues"
   },
-  "homepage": "https://github.com/Alcha/Didier#readme",
+  "homepage": "https://github.com/blizzardbots/Guild-Emblem-Generator#readme",
   "dependencies": {
     "canvas": "^1.6.7",
     "fs-extra": "^4.0.3"
