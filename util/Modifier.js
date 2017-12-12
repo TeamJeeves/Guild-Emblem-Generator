@@ -94,6 +94,21 @@ class Modifer {
     return generateTintImage(img, rgbks, red, green, blue)
   }
 
+  /**
+   * Updates the color of the provided images using the provided colors object.
+   * The images are typically obtained through the getBaseImages method in the
+   * Retriever class, and the colors can be retrieved from the Battle.net API.
+   *
+   * After the images have been updated, they're returned through a Promise.
+   *
+   * @param {Images} images
+   * @param {object} colors
+   * @param {number} colors.iconColor
+   * @param {number} colors.borderColor
+   * @param {number} colors.backgroundColor
+   *
+   * @returns {Promise<Images>}
+   */
   async updateBaseImageColors (images, colors) {
     for (let key in images) {
       const colorKey = key + 'Color'
@@ -106,6 +121,14 @@ class Modifer {
     return Promise.resolve(images)
   }
 
+  /**
+   * Converts the given hex string to an RGB value and returns it as an object
+   * via a Promise.
+   *
+   * @param {string} hex
+   *
+   * @returns {Promise<RGBs>}
+   */
   hexToRGB (hex) {
     const r = parseInt(hex.slice(2, 4), 16)
     const g = parseInt(hex.slice(4, 6), 16)
@@ -118,6 +141,15 @@ class Modifer {
     })
   }
 
+  /**
+   * Cleans the given emblem object, that is typically obtained via the
+   * Battle.net API, of the unused properties and returns an object that only
+   * contains the necessary values via a Promise.
+   *
+   * @param {Emblem} emblem
+   *
+   * @returns {Promise<CleanEmblem>}
+   */
   cleanEmblemObject (emblem) {
     return Promise.resolve({
       icon: emblem.icon,
@@ -128,6 +160,15 @@ class Modifer {
     })
   }
 
+  /**
+   * Cleans the given guild object, that is typically obtained via the
+   * Battle.net API, of the unused properties and returns an object that only
+   * contains the necessary values via a Promise.
+   *
+   * @param {Guild} guild
+   *
+   * @returns {Promise<CleanGuild>}
+   */
   cleanGuildObject (guild) {
     return Promise.resolve({
       faction: guild.side,
@@ -141,3 +182,62 @@ class Modifer {
 }
 
 module.exports = Modifer
+
+/**
+ * @typedef {Object} Images
+ * @prop {*} icon The buffer containing the icon image
+ * @prop {*} hooks The buffer containing the hooks image
+ * @prop {*} border The buffer containing the border image
+ * @prop {*} flag The Buffer containing the flag image
+ * @prop {*} background The buffer containing the background image
+ */
+
+/**
+ * @typedef {Object} RGBs
+ * @prop {number} red The number representing the amount of red (0 - 255)
+ * @prop {number} blue The number representing the amount of blue (0 - 255)
+ * @prop {number} green The number representing the amount of green (0 - 255)
+ */
+
+/**
+ * @typedef {Object} Emblem
+ * @prop {number} icon
+ * @prop {string} iconColor
+ * @prop {number} iconColorId
+ * @prop {number} border
+ * @prop {string} borderColor
+ * @prop {number} borderColorId
+ * @prop {string} backgroundColor
+ * @prop {number} backgroundColorId
+ */
+
+/**
+ * @typedef {Object} CleanEmblem
+ * @prop {number} icon
+ * @prop {string} iconColor
+ * @prop {number} border
+ * @prop {string} borderColor
+ * @prop {string} backgroundColor
+ */
+
+/**
+ * @typedef {Object} Guild
+ * @prop {number} lastModified
+ * @prop {string} name
+ * @prop {string} realm
+ * @prop {string} battlegroup
+ * @prop {number} level
+ * @prop {number} side
+ * @prop {number} achievementPoints
+ * @prop {Emblem} emblem
+ */
+
+/**
+ * @typedef {Object} CleanGuild
+ * @prop {number} faction
+ * @prop {number} icon
+ * @prop {string} iconColor
+ * @prop {number} border
+ * @prop {string} borderColor
+ * @prop {string} backgroundColor
+ */
