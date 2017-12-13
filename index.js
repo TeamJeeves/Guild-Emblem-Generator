@@ -4,6 +4,7 @@ const fs = require('fs-extra')
 const modifier = new (require('./util/Modifier'))()
 const retriever = new (require('./util/Retriever'))()
 
+const { Emblem, Guild } = require('./util/TypeDefs')
 const coords = require('./util/coords')
 
 module.exports = {
@@ -18,15 +19,7 @@ module.exports = {
    *
    * The resulting emblem is returned as a Buffer through a Promise.
    *
-   * @param {object} emblem
-   * @param {number} emblem.icon
-   * @param {string} emblem.iconColor
-   * @param {number} emblem.iconColorId
-   * @param {number} emblem.border
-   * @param {string} emblem.borderColor
-   * @param {number} emblem.borderColorId
-   * @param {string} emblem.backgroundColor
-   * @param {number} emblem.backgroundColorId
+   * @param {Emblem} emblem
    * @param {number} factionId
    *
    * @returns {Promise<Canvas>}
@@ -47,15 +40,7 @@ module.exports = {
    *
    * The resulting emblem is returned as a Buffer through a Promise.
    *
-   * @param {object} emblem
-   * @param {number} emblem.icon
-   * @param {string} emblem.iconColor
-   * @param {number} emblem.iconColorId
-   * @param {number} emblem.border
-   * @param {string} emblem.borderColor
-   * @param {number} emblem.borderColorId
-   * @param {string} emblem.backgroundColor
-   * @param {number} emblem.backgroundColorId
+   * @param {Emblem} emblem
    * @param {number} factionId
    *
    * @returns {Promise<Canvas>}
@@ -95,40 +80,23 @@ module.exports = {
    *
    * The resulting emblem is returned as a Buffer through a Promise.
    *
-   * @param {object} guild
-   * @param {number} guild.lastModified
-   * @param {string} guild.name
-   * @param {string} guild.realm
-   * @param {string} guild.battlegroup
-   * @param {number} guild.level
-   * @param {number} guild.side
-   * @param {number} guild.achievementPoints
-   * @param {object} guild.emblem
+   * @param {Guild} guild
    */
   getEmblemBufferFromGuild: async function (guild) {
     const cleanObj = await modifier.cleanGuildObject(guild)
-    return module.exports.getEmblemBuffer(cleanObj, cleanObj.faction)
+    return this.getEmblemBuffer(cleanObj, cleanObj.faction)
   },
 
   /**
    * Generates an emblem image using the guild object.
    *
    * The resulting emblem is returned as a Canvas through a Promise.
-   * @param {object} guild
-   * @param {number} guild.lastModified
-   * @param {string} guild.name
-   * @param {string} guild.realm
-   * @param {string} guild.battlegroup
-   * @param {number} guild.level
-   * @param {number} guild.side
-   * @param {number} guild.achievementPoints
-   * @param {object} guild.emblem
+   * @param {Guild} guild
    *
    * @returns {Promise<Canvas>}
    */
   getEmblemCanvasFromGuild: async function (guild) {
     const cleanObj = await modifier.cleanGuildObject(guild)
-    return module.exports.getEmblemCanvas(cleanObj, cleanObj.faction)
     return this.getEmblemCanvas(cleanObj, cleanObj.faction)
   },
 

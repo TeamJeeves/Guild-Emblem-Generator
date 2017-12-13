@@ -4,6 +4,9 @@ const { Image } = require('canvas')
 
 const imgPath = path.join(__dirname, '../img')
 
+// Used for JSDocs
+const { Images } = require('./TypeDefs')
+
 /**
  * A helper class for retrieving images that are used to build a WoW guild
  * emblem.
@@ -88,7 +91,7 @@ class Retriever {
    * @param {number} values.border
    * @param {number} values.background
    *
-   * @returns {Promise<Images>}
+   * @returns {Promise<Images[]>}
    */
   async getBaseImages (values) {
     const icon = new Image()
@@ -117,12 +120,3 @@ class Retriever {
 }
 
 module.exports = Retriever
-
-/**
- * @typedef {Object} Images
- * @prop {*} icon The buffer containing the icon image
- * @prop {*} hooks The buffer containing the hooks image
- * @prop {*} border The buffer containing the border image
- * @prop {*} flag The Buffer containing the flag image
- * @prop {*} background The buffer containing the background image
- */

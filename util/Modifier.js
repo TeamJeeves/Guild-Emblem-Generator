@@ -1,6 +1,13 @@
 const Canvas = require('canvas')
 const Image = Canvas.Image
 
+// Used for JSDocs
+const {
+  Emblem, Guild,
+  CleanEmblem, CleanGuild,
+  Colors, Images, RGBs
+} = require('./TypeDefs')
+
 /**
  * Generates the RGB values for tinting an image. This method was largely
  * written by Joe of https://playmycode.com.
@@ -127,7 +134,7 @@ class Modifer {
    * @param {number} colors.borderColor
    * @param {number} colors.backgroundColor
    *
-   * @returns {Promise<Images>}
+   * @returns {Promise<Images[]>}
    */
   async updateBaseImageColors (images, colors) {
     for (let key in images) {
@@ -202,62 +209,3 @@ class Modifer {
 }
 
 module.exports = Modifer
-
-/**
- * @typedef {Object} Images
- * @prop {*} icon The buffer containing the icon image
- * @prop {*} hooks The buffer containing the hooks image
- * @prop {*} border The buffer containing the border image
- * @prop {*} flag The Buffer containing the flag image
- * @prop {*} background The buffer containing the background image
- */
-
-/**
- * @typedef {Object} RGBs
- * @prop {number} red The number representing the amount of red (0 - 255)
- * @prop {number} blue The number representing the amount of blue (0 - 255)
- * @prop {number} green The number representing the amount of green (0 - 255)
- */
-
-/**
- * @typedef {Object} Emblem
- * @prop {number} icon
- * @prop {string} iconColor
- * @prop {number} iconColorId
- * @prop {number} border
- * @prop {string} borderColor
- * @prop {number} borderColorId
- * @prop {string} backgroundColor
- * @prop {number} backgroundColorId
- */
-
-/**
- * @typedef {Object} CleanEmblem
- * @prop {number} icon
- * @prop {string} iconColor
- * @prop {number} border
- * @prop {string} borderColor
- * @prop {string} backgroundColor
- */
-
-/**
- * @typedef {Object} Guild
- * @prop {number} lastModified
- * @prop {string} name
- * @prop {string} realm
- * @prop {string} battlegroup
- * @prop {number} level
- * @prop {number} side
- * @prop {number} achievementPoints
- * @prop {Emblem} emblem
- */
-
-/**
- * @typedef {Object} CleanGuild
- * @prop {number} faction
- * @prop {number} icon
- * @prop {string} iconColor
- * @prop {number} border
- * @prop {string} borderColor
- * @prop {string} backgroundColor
- */
