@@ -1,5 +1,5 @@
 {
-  "name": "guild-emblem-generator",
+  "name": "@blizzardbots/guild-emblem-generator",
   "version": "1.2.0",
   "description": "A tool for building World of Warcraft guild emblems using node-canvas.",
   "main": "index.js",
@@ -18,7 +18,7 @@
     "warcraft",
     "blizzard"
   ],
-  "author": "Alcha <alcha@paranoiddevs.com> (https://paranoiddevs.com/)",
+  "author": "Alcha @ Blizzardbots",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/blizzardbots/Guild-Emblem-Generator/issues"
@@ -30,5 +30,8 @@
   },
   "devDependencies": {
     "standard": "10.0.3"
+  },
+  "directories": {
+    "example": "examples"
   }
 }
