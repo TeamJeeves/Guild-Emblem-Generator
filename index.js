@@ -1,4 +1,5 @@
 const Canvas = require('canvas')
+const fs = require('fs-extra')
 
 const modifier = new (require('./util/Modifier'))()
 const retriever = new (require('./util/Retriever'))()
@@ -128,5 +129,31 @@ module.exports = {
   getEmblemCanvasFromGuild: async function (guild) {
     const cleanObj = await modifier.cleanGuildObject(guild)
     return module.exports.getEmblemCanvas(cleanObj, cleanObj.faction)
+    return this.getEmblemCanvas(cleanObj, cleanObj.faction)
+  },
+
+  /**
+   * Converts the given emblem object into an image and stores it to disk using
+   * the given filename and options. The provided filename should contain the
+   * full path to the location you wish to store the image. The accepted options
+   * are the same options you would pass to fs.writeFile() using the default fs
+   * module.
+   *
+   * The file is saved using the outputFile method that is part of the fs-extra
+   * module. This means that if the parent directory of the path doesn't exist,
+   * it will be created.
+   *
+   * @param {Emblem} emblem
+   * @param {string} filename
+   * @param {object} options
+   *
+   * @returns {Promise<void>}
+   *
+   * @see https://github.com/jprichardson/node-fs-extra/blob/master/docs/outputFile.md
+   * @see https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback
+   */
+  saveEmblemToFile: async function (emblem, filename, options) {
+    const imageBuffer = await this.getEmblemBuffer(emblem)
+    return fs.outputFile(filename, imageBuffer, options)
   }
 }
