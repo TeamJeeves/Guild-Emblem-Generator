@@ -1,5 +1,5 @@
 {
-  "name": "@blizzardbots/guild-emblem-generator",
+  "name": "guild-emblem-generator",
   "version": "1.2.0",
   "description": "A tool for building World of Warcraft guild emblems using node-canvas.",
   "main": "index.js",
