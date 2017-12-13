@@ -6,10 +6,10 @@ convert the object into a buffer or a Canvas.
 
 ## Usage
 
-You can use the emblem generator one of two ways as of the 1.0.0 release, either
-obtain the buffer of the generated image, or the canvas object which we generate
-using [node-canvas](https://github.com/Automattic/node-canvas). Here are samples
-using both ways:
+You can use the emblem generator one of 3 ways as of the 1.1.0 release, you can
+generate a buffer of the generated image, a canvas object which we generate
+using [node-canvas](https://github.com/Automattic/node-canvas), or to save the
+generated image to a directory. Here are samples showing how to use them:
 
 ```javascript
 const emblemGenerator = require('guild-emblem-generator')
@@ -53,4 +53,15 @@ emblemGenerator.getEmblemBufferFromGuild(testGuild).then(buffer => {
 emblemGenerator.getEmblemCanvas(testEmblem, 1).then(canvas => {
   console.log(canvas)
 })
+
+emblemGenerator.saveEmblemToFile(testEmblem, 1, 'MyTestGuild.png').then(() => {
+  console.log('The file has been saved!')
+})
 ```
+
+## SaveEmblemToFile options
+
+The options for the `saveEmblemToFile()` method are the same options available
+to the `fs.writeFile()` method that is present in node by default. For more
+information, please see the [node.js documenation](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
+on the method.

@@ -111,7 +111,11 @@ module.exports = {
    * module. This means that if the parent directory of the path doesn't exist,
    * it will be created.
    *
+   * As of version 1.1.0, this method only accepts emblem objects, not the
+   * entire guild object with extra information.
+   *
    * @param {Emblem} emblem
+   * @param {number} factionId
    * @param {string} filename
    * @param {object} options
    *
@@ -120,8 +124,8 @@ module.exports = {
    * @see https://github.com/jprichardson/node-fs-extra/blob/master/docs/outputFile.md
    * @see https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback
    */
-  saveEmblemToFile: async function (emblem, filename, options) {
-    const imageBuffer = await this.getEmblemBuffer(emblem)
+  saveEmblemToFile: async function (emblem, factionId, filename, options) {
+    const imageBuffer = await this.getEmblemBuffer(emblem, factionId)
     return fs.outputFile(filename, imageBuffer, options)
   }
 }
