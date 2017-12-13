@@ -9,6 +9,23 @@ const coords = require('./util/coords')
 
 module.exports = {
   /**
+   * A helper class for retrieving images that are used to build a WoW guild
+   * emblem.
+   *
+   * @class
+   */
+  Retriever: require('./util/Retriever'),
+
+  /**
+   * A helper class for modifying the base images used to build a WoW guild
+   * emblem. Also useful for cleaning JSON objects from the Battle.net API to
+   * remove the unnecessary properties such as iconColorId, borderColorId, etc.
+   *
+   * @class
+   */
+  Modifier: require('./util/Modifier'),
+
+  /**
    * Generates an emblem image using the data in the given emblem object and
    * faction id. The faction id is required in order to know which background
    * image to use as they're based on the guild faction. The emblem object is
