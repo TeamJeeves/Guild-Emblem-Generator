@@ -6,58 +6,12 @@ convert the object into a buffer or a Canvas.
 
 ## Usage
 
-You can use the emblem generator one of 3 ways as of the 1.1.0 release, you can
-generate a buffer of the generated image, a canvas object which we generate
-using [node-canvas](https://github.com/Automattic/node-canvas), or to save the
-generated image to a directory. Here are samples showing how to use them:
+You can use the emblem generator a few different ways. As of 1.2.0, the helper
+classes have been exported as part of the module in case you wish to expand on
+the basic methods that are exported by default.
 
-```javascript
-const emblemGenerator = require('guild-emblem-generator')
-const fs = require('fs')
-
-const testEmblem = {
-  'icon': 97,
-  'iconColor': 'ff101517',
-  'iconColorId': 15,
-  'border': 0,
-  'borderColor': 'ff0f1415',
-  'borderColorId': 15,
-  'backgroundColor': 'ffffffff',
-  'backgroundColorId': 49
-}
-
-const testGuild = {
-  'lastModified': 1512863169000,
-  'name': 'Precognition',
-  'realm': 'Balnazzar',
-  'battlegroup': 'Ruin',
-  'level': 25,
-  'side': 1,
-  'achievementPoints': 1575,
-  'emblem': {
-    'icon': 97,
-    'iconColor': 'ff101517',
-    'iconColorId': 15,
-    'border': 0,
-    'borderColor': 'ff0f1415',
-    'borderColorId': 15,
-    'backgroundColor': 'ffffffff',
-    'backgroundColorId': 49
-  }
-}
-
-emblemGenerator.getEmblemBufferFromGuild(testGuild).then(buffer => {
-  fs.writeFileSync(`${testGuild.name}.png`, buffer)
-})
-
-emblemGenerator.getEmblemCanvas(testEmblem, 1).then(canvas => {
-  console.log(canvas)
-})
-
-emblemGenerator.saveEmblemToFile(testEmblem, 1, 'MyTestGuild.png').then(() => {
-  console.log('The file has been saved!')
-})
-```
+For examples on how to use the base module, take a look in the examples folder
+where we have a file for each of the exported methods.
 
 ## SaveEmblemToFile options
 
