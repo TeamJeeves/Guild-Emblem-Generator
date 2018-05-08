@@ -16,7 +16,17 @@
 /**
  * @type {Emblem}
  */
-module.exports.Emblem = {}
+module.exports.Emblem = {
+  icon: undefined,
+  iconColor: undefined,
+  iconColorId: undefined,
+  border: undefined,
+  borderColor: undefined,
+  borderColorId: undefined,
+  background: undefined,
+  backgroundColor: undefined,
+  backgroundColorId: undefined
+}
 
 /**
  * @typedef {Object} Guild
@@ -32,7 +42,16 @@ module.exports.Emblem = {}
 /**
  * @type {Guild}
  */
-module.exports.Guild = {}
+module.exports.Guild = {
+  lastModified: undefined,
+  name: undefined,
+  realm: undefined,
+  battlegroup: undefined,
+  level: undefined,
+  side: undefined,
+  achievementPoints: undefined,
+  emblem: undefined
+}
 
 /**
  * @typedef {Object} CleanEmblem
@@ -45,7 +64,13 @@ module.exports.Guild = {}
 /**
  * @type {CleanEmblem}
  */
-module.exports.CleanEmblem = {}
+module.exports.CleanEmblem = {
+  icon: undefined,
+  iconColor: undefined,
+  border: undefined,
+  borderColor: undefined,
+  backgroundColor: undefined
+}
 
 /**
  * @typedef {Object} CleanGuild
@@ -59,7 +84,14 @@ module.exports.CleanEmblem = {}
 /**
  * @type {CleanGuild}
  */
-module.exports.CleanGuild = {}
+module.exports.CleanGuild = {
+  faction: undefined,
+  icon: undefined,
+  iconColor: undefined,
+  border: undefined,
+  borderColor: undefined,
+  backgroundColor: undefined
+}
 
 /**
  * @typedef {Object} Images
@@ -72,7 +104,13 @@ module.exports.CleanGuild = {}
 /**
  * @type {Images}
  */
-module.exports.Images = {}
+module.exports.Images = {
+  icon: undefined,
+  hooks: undefined,
+  border: undefined,
+  flag: undefined,
+  background: undefined
+}
 
 /**
  * @typedef {Object} RGBs
@@ -83,15 +121,23 @@ module.exports.Images = {}
 /**
  * @type {RGBs}
  */
-module.exports.RGBs = {}
+module.exports.RGBs = {
+  red: undefined,
+  blue: undefined,
+  green: undefined
+}
 
 /**
  * @typedef {Object} Colors
- * @prop {number} colors.iconColor
- * @prop {number} colors.borderColor
- * @prop {number} colors.backgroundColor
+ * @prop {number} iconColor
+ * @prop {number} borderColor
+ * @prop {number} backgroundColor
  */
 /**
  * @type {Colors}
  */
-module.exports.Colors = {}
+module.exports.Colors = {
+  iconColor: undefined,
+  borderColor: undefined,
+  backgroundColor: undefined
+}
