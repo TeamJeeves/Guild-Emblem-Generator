@@ -1,8 +1,10 @@
 const Canvas = require('canvas')
 const fs = require('fs-extra')
+const path = require('path')
 
 const modifier = new (require('./util/Modifier'))()
-const retriever = new (require('./util/Retriever'))()
+const canvasMan = new (require('./util/CanvasManager'))()
+const cManager = new (require('./util/CacheManager'))()
 
 const { Emblem, Guild } = require('./util/TypeDefs')
 const coords = require('./util/coords')
@@ -37,7 +39,7 @@ module.exports = {
    * The resulting emblem is returned as a Buffer through a Promise.
    *
    * @param {Emblem} emblem
-   * @param {number} factionId
+   * @param {number} factionId 0 = Alliance; 1 = Horde
    *
    * @returns {Promise<Canvas>}
    */
@@ -63,33 +65,43 @@ module.exports = {
    * @returns {Promise<Canvas>}
    */
   getEmblemCanvas: async function (emblem, factionId) {
-    const cleanObj = await modifier.cleanEmblemObject(emblem)
-    const baseImages = await retriever.getBaseImages({
-      icon: cleanObj.icon,
-      border: cleanObj.border,
-      background: factionId
-    })
-    const coloredImgs = await modifier.updateBaseImageColors(baseImages, cleanObj)
+    const cacheFilename = cManager.generateFileName(emblem, factionId)
 
-    const canvas = new Canvas(250, 250)
-    const ctx = canvas.getContext('2d')
+    if (await cManager.isImageCached(cacheFilename)) {
+      let imagePath = path.join(__dirname, 'cache', cacheFilename)
+      return canvasMan.getImageCanvas(imagePath)
+    } else {
+      const cleanObj = await modifier.cleanEmblemObject(emblem)
+      const baseImages = await canvasMan.getBaseImages({
+        icon: cleanObj.icon,
+        border: cleanObj.border,
+        background: factionId
+      })
+      const coloredImgs = await modifier.updateBaseImageColors(baseImages, cleanObj)
 
-    // Draw faction based background image first
-    ctx.drawImage(coloredImgs.background, coords.background.x, coords.background.y, coloredImgs.background.width, coloredImgs.background.height)
+      const canvas = new Canvas(250, 250)
+      const ctx = canvas.getContext('2d')
 
-    // Draw colored flag backdrop
-    ctx.drawImage(coloredImgs.flag, coords.flag.x, coords.flag.y, coloredImgs.flag.width, coloredImgs.flag.height)
+      // Draw faction based background image first
+      ctx.drawImage(coloredImgs.background, coords.background.x, coords.background.y, coloredImgs.background.width, coloredImgs.background.height)
 
-    // Draw the hooks over the flag
-    ctx.drawImage(coloredImgs.hooks, coords.hooks.x, coords.hooks.y, coloredImgs.hooks.width, coloredImgs.hooks.height)
+      // Draw colored flag backdrop
+      ctx.drawImage(coloredImgs.flag, coords.flag.x, coords.flag.y, coloredImgs.flag.width, coloredImgs.flag.height)
 
-    // Draw the border surrounding the flag
-    ctx.drawImage(coloredImgs.border, coords.border.x, coords.border.y, coloredImgs.border.width, coloredImgs.border.height)
+      // Draw the hooks over the flag
+      ctx.drawImage(coloredImgs.hooks, coords.hooks.x, coords.hooks.y, coloredImgs.hooks.width, coloredImgs.hooks.height)
 
-    // Draw the icon in the center of the flag
-    ctx.drawImage(coloredImgs.icon, coords.icon.x, coords.icon.y, coloredImgs.icon.width, coloredImgs.icon.height)
+      // Draw the border surrounding the flag
+      ctx.drawImage(coloredImgs.border, coords.border.x, coords.border.y, coloredImgs.border.width, coloredImgs.border.height)
 
-    return canvas
+      // Draw the icon in the center of the flag
+      ctx.drawImage(coloredImgs.icon, coords.icon.x, coords.icon.y, coloredImgs.icon.width, coloredImgs.icon.height)
+
+      // Cache the image for when it
+      cManager.storeImage(cacheFilename, canvas.toBuffer())
+
+      return canvas
+    }
   },
 
   /**

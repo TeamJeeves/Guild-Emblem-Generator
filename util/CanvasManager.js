@@ -57,9 +57,11 @@ class CanvasManager {
     return new Promise((resolve, reject) => {
       fs.readFile(filepath).then(buffer => {
         const canvas = new Canvas(250, 250)
+        const ctx = canvas.getContext('2d')
         const image = new Image()
         image.src = buffer
-        canvas.drawImage(image)
+
+        ctx.drawImage(image, 0, 0, 250, 250)
 
         resolve(canvas)
       })
