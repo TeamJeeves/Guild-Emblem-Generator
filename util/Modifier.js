@@ -90,7 +90,7 @@ class Modifer {
       iconColor: emblem.iconColor,
       border: emblem.border,
       borderColor: emblem.borderColor,
-      backgroundColor: emblem.backgroundColor
+      flagColor: emblem.backgroundColor
     })
   }
 
@@ -166,7 +166,7 @@ class Modifer {
 
       ctx.putImageData(to, 0, 0)
 
-    // image is _slightly_ faster then canvas for this, so convert
+      // image is _slightly_ faster then canvas for this, so convert
       const imgComp = new Image()
       imgComp.src = canvas.toDataURL()
 

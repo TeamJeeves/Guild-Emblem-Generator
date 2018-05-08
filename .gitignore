@@ -30,3 +30,7 @@ node_modules
 img/Image_Template\.xcf
 
 output/
+
+cache/
+
+\.vscode/
