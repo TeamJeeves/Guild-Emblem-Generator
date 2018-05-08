@@ -1,5 +1,7 @@
-[![Dependencies Status](https://david-dm.org/blizzardbots/Guild-Emblem-Generator/status.svg)](https://david-dm.org/blizzardbots/Guild-Emblem-Generator)
-[![Standard-Js](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
+[![Dependencies Status](https://img.shields.io/david/blizzardbots/Guild-Emblem-Generator.svg?style=flat-square)](https://david-dm.org/blizzardbots/Guild-Emblem-Generator)
+[![devDependencies Status](https://img.shields.io/david/dev/blizzardbots/Guild-Emblem-Generator.svg?style=flat-square)](https://david-dm.org/blizzardbots/Guild-Emblem-Generator?type=dev)
+[![Standard-Js](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com/)
+[![GitHub license](https://img.shields.io/github/license/HF-Solutions/Tron.svg?style=flat-square)](https://github.com/blizzardbots/Guild-Emblem-Generator/blob/master/LICENSE.md)
 
 # Guild-Emblem-Generator
 
