@@ -1,3 +1,6 @@
+[![Dependencies Status](https://david-dm.org/blizzardbots/Guild-Emblem-Generator/status.svg)](https://david-dm.org/blizzardbots/Guild-Emblem-Generator)
+[![Standard-Js](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
+
 # Guild-Emblem-Generator
 
 The Guild-Emblem-Generator is a tool written in Node.js to convert emblem and
