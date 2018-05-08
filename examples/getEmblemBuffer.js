@@ -1,4 +1,4 @@
-const emblemGenerator = require('guild-emblem-generator')
+const emblemGenerator = require('../')
 const fs = require('fs')
 
 const testEmblem = {
@@ -8,7 +8,7 @@ const testEmblem = {
   'border': 0,
   'borderColor': 'ff0f1415',
   'borderColorId': 15,
-  'backgroundColor': 'ffffffff',
+  'backgroundColor': 'fffc6891',
   'backgroundColorId': 49
 }
 
