@@ -1,11 +1,7 @@
 const fs = require('fs-extra')
 const path = require('path')
-const { Image } = require('canvas')
 
 const imgPath = path.join(__dirname, '../img')
-
-// Used for JSDocs
-const { Images } = require('./TypeDefs')
 
 /**
  * A helper class for retrieving images that are used to build a WoW guild
@@ -74,48 +70,6 @@ class Retriever {
    */
   getHooks () {
     return fs.readFile(path.join(imgPath, 'hooks.png'))
-  }
-
-  /**
-   * Retrieves the base images required to build a guild emblem with the given
-   * values. Accepts the icon, border, and background/faction id as part of the
-   * input parameter. See example for more info.
-   *
-   * @example
-   * const images = await getBaseImages({icon: 12, border: 2, background: 1})
-   *
-   * console.log('icon buffer = ' + images.icon)
-   *
-   * @param {object} values
-   * @param {number} values.icon
-   * @param {number} values.border
-   * @param {number} values.background
-   *
-   * @returns {Promise<Images[]>}
-   */
-  async getBaseImages (values) {
-    const icon = new Image()
-    icon.src = await this.getIcon(values.icon)
-
-    const hooks = new Image()
-    hooks.src = await this.getHooks()
-
-    const border = new Image()
-    border.src = await this.getBorder(values.border)
-
-    const flag = new Image()
-    flag.src = await this.getFlag()
-
-    const background = new Image()
-    background.src = await this.getBackground(values.background)
-
-    return Promise.resolve({
-      icon: icon,
-      hooks: hooks,
-      border: border,
-      flag: flag,
-      background: background
-    })
   }
 }
 
