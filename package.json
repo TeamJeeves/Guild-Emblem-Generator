@@ -1,7 +1,7 @@
 {
   "name": "guild-emblem-generator",
   "displayName": "Guild Emblem Generator",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "A tool for building World of Warcraft guild emblems using node-canvas.",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blizzardbots/Guild-Emblem-Generator.git"
+    "url": "git+https://github.com/TeamJeeves/Guild-Emblem-Generator.git"
   },
   "directories": {
     "example": "examples",
@@ -24,19 +24,19 @@
     "warcraft",
     "blizzard"
   ],
-  "author": "Alcha @ Blizzardbots",
+  "author": "Alcha @ TeamJeeves",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/blizzardbots/Guild-Emblem-Generator/issues"
+    "url": "https://github.com/TeamJeeves/Guild-Emblem-Generator/issues"
   },
-  "homepage": "https://github.com/blizzardbots/Guild-Emblem-Generator#readme",
+  "homepage": "https://github.com/TeamJeeves/Guild-Emblem-Generator#readme",
   "dependencies": {
-    "canvas": "1.6.10",
-    "fs-extra": "6.0.0"
+    "canvas": "2.1.0",
+    "fs-extra": "7.0.1"
   },
   "devDependencies": {
-    "standard": "11.0.1",
-    "jest": "22.4.3"
+    "standard": "12.0.1",
+    "jest": "23.6.0"
   },
   "standard": {
     "ignore": [

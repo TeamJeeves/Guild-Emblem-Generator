@@ -1,4 +1,4 @@
-const emblemGenerator = require('guild-emblem-generator')
+const EmblemGenerator = require('guild-emblem-generator')
 const fs = require('fs')
 
 const testGuild = {
@@ -11,7 +11,7 @@ const testGuild = {
   'achievementPoints': 1575,
   'emblem': {
     'icon': 97,
-    'iconColor': 'ff101517',
+    'iconColor': 'ff2c3acc',
     'iconColorId': 15,
     'border': 0,
     'borderColor': 'ff0f1415',
@@ -21,6 +21,6 @@ const testGuild = {
   }
 }
 
-emblemGenerator.getEmblemBufferFromGuild(testGuild).then(buffer => {
+EmblemGenerator.getEmblemBufferFromGuild(testGuild).then(buffer => {
   fs.writeFileSync(`${testGuild.name}.png`, buffer)
 }).catch(err => console.error(err))
