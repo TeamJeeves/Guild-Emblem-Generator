@@ -1,7 +1,7 @@
-[![Dependencies Status](https://img.shields.io/david/blizzardbots/Guild-Emblem-Generator.svg?style=flat-square)](https://david-dm.org/blizzardbots/Guild-Emblem-Generator)
-[![devDependencies Status](https://img.shields.io/david/dev/blizzardbots/Guild-Emblem-Generator.svg?style=flat-square)](https://david-dm.org/blizzardbots/Guild-Emblem-Generator?type=dev)
+[![Dependencies Status](https://david-dm.org/TeamJeeves/Guild-Emblem-Generator/status.svg)](https://david-dm.org/TeamJeeves/Guild-Emblem-Generator)
+[![devDependencies Status](https://david-dm.org/TeamJeeves/Guild-Emblem-Generator/dev-status.svg)](https://david-dm.org/TeamJeeves/Guild-Emblem-Generator?type=dev)
 [![Standard-Js](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com/)
-[![GitHub license](https://img.shields.io/github/license/HF-Solutions/Tron.svg?style=flat-square)](https://github.com/blizzardbots/Guild-Emblem-Generator/blob/master/LICENSE.md)
+[![GitHub license](https://img.shields.io/github/license/TeamJeeves/Guild-Emblem-Generator.svg?style=flat-square)](https://github.com/TeamJeeves/Guild-Emblem-Generator/blob/master/LICENSE.md)
 
 # Guild-Emblem-Generator
 
@@ -22,5 +22,5 @@ where we have a file for each of the exported methods.
 
 The options for the `saveEmblemToFile()` method are the same options available
 to the `fs.writeFile()` method that is present in node by default. For more
-information, please see the [node.js documenation](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
+information, please see the [node.js documentation](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
 on the method.

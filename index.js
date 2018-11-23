@@ -1,4 +1,4 @@
-const Canvas = require('canvas')
+const { Canvas } = require('canvas')
 const fs = require('fs-extra')
 const path = require('path')
 
