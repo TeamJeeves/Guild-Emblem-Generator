@@ -11,7 +11,7 @@ const testGuild = {
   'achievementPoints': 1575,
   'emblem': {
     'icon': 97,
-    'iconColor': 'ff101517',
+    'iconColor': 'ff2c3acc',
     'iconColorId': 15,
     'border': 0,
     'borderColor': 'ff0f1415',
@@ -23,7 +23,7 @@ const testGuild = {
 
 const testEmblem = {
   'icon': 97,
-  'iconColor': 'ff101517',
+  'iconColor': 'ff2c3acc',
   'iconColorId': 15,
   'border': 0,
   'borderColor': 'ff0f1415',
