@@ -1,5 +1,5 @@
-[![Dependencies Status](https://img.shields.io/david/TeamJeeves/Guild-Emblem-Generator.svg?style=flat-square)](https://david-dm.org/TeamJeeves/Guild-Emblem-Generator)
-[![devDependencies Status](https://img.shields.io/david/dev/TeamJeeves/Guild-Emblem-Generator.svg?style=flat-square)](https://david-dm.org/TeamJeeves/Guild-Emblem-Generator?type=dev)
+[![Dependencies Status](https://david-dm.org/TeamJeeves/Guild-Emblem-Generator/status.svg)](https://david-dm.org/TeamJeeves/Guild-Emblem-Generator)
+[![devDependencies Status](https://david-dm.org/TeamJeeves/Guild-Emblem-Generator/dev-status.svg)](https://david-dm.org/TeamJeeves/Guild-Emblem-Generator?type=dev)
 [![Standard-Js](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com/)
 [![GitHub license](https://img.shields.io/github/license/TeamJeeves/Guild-Emblem-Generator.svg?style=flat-square)](https://github.com/TeamJeeves/Guild-Emblem-Generator/blob/master/LICENSE.md)
 
