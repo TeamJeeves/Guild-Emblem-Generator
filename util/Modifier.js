@@ -1,5 +1,4 @@
-const Canvas = require('canvas')
-const Image = Canvas.Image
+const { Canvas, Image } = require('canvas')
 
 // Used for JSDocs
 const {

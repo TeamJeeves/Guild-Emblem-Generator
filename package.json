@@ -31,12 +31,16 @@
   },
   "homepage": "https://github.com/TeamJeeves/Guild-Emblem-Generator#readme",
   "dependencies": {
-    "canvas": "1.6.10",
-    "fs-extra": "6.0.0"
+    "canvas": "2.1.0",
+    "fs-extra": "7.0.1"
   },
   "devDependencies": {
     "standard": "12.0.1",
     "jest": "23.6.0"
   },
-  "standard": { "ignore": ["*.test.js"] }
+  "standard": {
+    "ignore": [
+      "*.test.js"
+    ]
+  }
 }
