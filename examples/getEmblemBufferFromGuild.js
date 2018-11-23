@@ -1,4 +1,4 @@
-const emblemGenerator = require('guild-emblem-generator')
+const EmblemGenerator = require('guild-emblem-generator')
 const fs = require('fs')
 
 const testGuild = {
@@ -21,6 +21,6 @@ const testGuild = {
   }
 }
 
-emblemGenerator.getEmblemBufferFromGuild(testGuild).then(buffer => {
+EmblemGenerator.getEmblemBufferFromGuild(testGuild).then(buffer => {
   fs.writeFileSync(`${testGuild.name}.png`, buffer)
 }).catch(err => console.error(err))

@@ -1,4 +1,4 @@
-const emblemGenerator = require('../')
+const EmblemGenerator = require('../')
 const fs = require('fs')
 
 const testEmblem = {
@@ -12,6 +12,6 @@ const testEmblem = {
   'backgroundColorId': 49
 }
 
-emblemGenerator.getEmblemBuffer(testEmblem, 1).then(buffer => {
+EmblemGenerator.getEmblemBuffer(testEmblem, 1).then(buffer => {
   fs.writeFileSync('TestFile.png', buffer)
 }).catch(err => console.error(err))

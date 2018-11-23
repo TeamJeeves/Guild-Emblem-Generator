@@ -1,4 +1,4 @@
-const emblemGenerator = require('guild-emblem-generator')
+const EmblemGenerator = require('guild-emblem-generator')
 
 const testGuild = {
   'lastModified': 1512863169000,
@@ -20,7 +20,7 @@ const testGuild = {
   }
 }
 
-emblemGenerator.getEmblemCanvasFromGuild(testGuild).then(canvas => {
+EmblemGenerator.getEmblemCanvasFromGuild(testGuild).then(canvas => {
   console.log(`The image height is ${canvas.height}.`)
   console.log(`The image width is ${canvas.width}.`)
 }).catch(err => console.error(err))
