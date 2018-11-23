@@ -22,5 +22,5 @@ where we have a file for each of the exported methods.
 
 The options for the `saveEmblemToFile()` method are the same options available
 to the `fs.writeFile()` method that is present in node by default. For more
-information, please see the [node.js documenation](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
+information, please see the [node.js documentation](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
 on the method.
