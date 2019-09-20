@@ -1,5 +1,8 @@
+[![Build status](https://dev.azure.com/4lch4/Guild%20Emblem%20Generator/_apis/build/status/Guild%20Emblem%20Generator)](https://dev.azure.com/4lch4/Guild%20Emblem%20Generator/_build/latest?definitionId=4)
 [![Dependencies Status](https://david-dm.org/TeamJeeves/Guild-Emblem-Generator/status.svg)](https://david-dm.org/TeamJeeves/Guild-Emblem-Generator)
 [![devDependencies Status](https://david-dm.org/TeamJeeves/Guild-Emblem-Generator/dev-status.svg)](https://david-dm.org/TeamJeeves/Guild-Emblem-Generator?type=dev)
+
+
 [![Standard-Js](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com/)
 [![GitHub license](https://img.shields.io/github/license/TeamJeeves/Guild-Emblem-Generator.svg?style=flat-square)](https://github.com/TeamJeeves/Guild-Emblem-Generator/blob/master/LICENSE.md)
 
