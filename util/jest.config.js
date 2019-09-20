@@ -5,5 +5,6 @@ module.exports = {
     '!**/node_modules/**'
   ],
   coverageDirectory: './coverage/',
-  rootDir: '../'
+  rootDir: '../',
+  reporters: [ 'default', 'jest-junit' ]
 }
